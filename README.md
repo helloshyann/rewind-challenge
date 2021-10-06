@@ -1,1 +1,1 @@
-# js-template
+# Rewind Coding Challenge
