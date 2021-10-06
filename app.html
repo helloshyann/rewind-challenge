@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>APP NAME by Shyann Jobe</title>
+    <title>Rewind by Shyann Jobe</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -35,7 +35,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="img/mark-white.png" class="d-inline-block aligin-text-top" height="35"> 
-                APP NAME
+                Rewind
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,20 +71,34 @@
     <!-- Page Content-->
     <section class="flex-shrink-0 py-5">
         <div class="container px-5 my-5">
-            <div class="text-center mb-5">
-                <h1 class="fw-bolder animate__animated animate__bounceIn">App UI Goes Here</h1>
-                <p class="lead fw-normal text-muted mb-0">A simple way to view how this program was written.</p>
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col cols-md-6">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder animate__animated animate__bounceIn">
+                            REWIND: A Coding Challenge
+                        </h1>
+                        <p>This project reverses a string using a decremented for loop.</p>
+                    </div>
+                </div>
+                <div class="col cols-md-6">
+                    <h5>Enter a string to reverse</h5>
+                    <hr/>
+                    <form class="row gx-3 gy-2">
+                        <div class="col-12">
+                            <input type="text" id="userString" required placeholder="Enter 2 or more characters" class="form-control"/>
+                        </div>
+                        <div class="col-12">
+                            <button type="button" id="btnSubmit" class="btn">Reverse</button>
+                        </div>
+                    </form>
+                    <hr/>
+                    <p id="results">
+                        <!-- Results Populate Here -->
+                    </p>
+                </div>
             </div>
-            
-        <hr>
-           <form>
-               <input id="message" type="text" placeholder="Enter a message" required>
-               <button id="btnSubmit" type="button" class="btn">Display</button>
-           </form>
-
         </div>
     </section>
-
 
     <!--Footer Section -->
     <footer class="footer sticky-footer mt-auto py-3">
@@ -127,7 +141,7 @@
     <!-- Javascript -->
     <script src="js/site.js"></script>
     <script>
-        document.getElementById("btnSubmit").addEventListener("click", displayMessage);
+        document.getElementById("btnSubmit").addEventListener("click", getString);
     </script>
 </body>
 
