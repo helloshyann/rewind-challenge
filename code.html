@@ -75,7 +75,7 @@
         <div class="container px-5 my-5">
             <div class="card text-center p-3">
                 <h1 class="fw-bolder animate__animated animate__bounceIn">View the Code</h1>
-                <p class="lead fw-normal text-muted mb-0">A simple way to view how this program was written.</p>
+                <p class="lead fw-normal text-muted mb-0">A simple way to see how this program was written.</p>
             </div>
 
             <hr>
@@ -83,23 +83,30 @@
             <div class="row row-cols-1 gx-5">
                 <!-- Code Accordion 1-->
                 <div class="col col-md-8">                   
-                    <h2 class="fw-bolder mb-3">JavaScript, HTML, & CSS</h2>
+                    <h2 class="fw-bolder mb-3">JavaScript Functions</h2>
                     <div class="accordion mb-5" id="accordionExample">
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">JavaScript</button></h3>
+                            <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                function getString()
+                            </button></h3>
                             <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     
                                     <pre class="line-numbers">
                                         <code class="language-javascript">
-                                            //Get starting values from the DOM
-                                            //Controller function
-                                            function displayMessage(){
-                                                let msg = "";
                                             
-                                                msg = document.getElementById("message").value;
+                                            function getString(){
+
+                                                // Get the user's input
+                                                let userString = document.getElementById("userString").value;
                                             
-                                                Swal.fire(msg);
+                                                // Test the user's input for length
+                                                // Reverse the input => seperate function
+                                                let revString = reverseString(userString);
+                                            
+                                                // Display the result => seperate function
+                                                displayString(revString);
+                                            
                                             }
                                             
                                         </code>
@@ -109,20 +116,31 @@
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">HTML 5</button></h3>
+                            <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                function reverseString()
+                            </button></h3>
                             <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     
                                     <pre class="line-numbers">
                                         <code class="language-javascript">
-                                            //Get starting values from the DOM
-                                            //Controller function
-                                            function displayMessage(){
-                                                let msg = "";
                                             
-                                                msg = document.getElementById("message").value;
+                                            function reverseString(userString){
+    
+                                                // Start at the last index
+                                                let startValue = userString.length - 1;
+                                                let endValue = 0;
+                                                
+                                                let revString = "";
                                             
-                                                Swal.fire(msg);
+                                                // In a decremented for loop,
+                                                // the start value must be higher than the end value
+                                                for(let i = startValue; i >= endValue; i--){
+                                                    revString += userString[i];
+                                                };
+                                            
+                                                return revString
+                                            
                                             }
                                             
                                         </code>
@@ -132,20 +150,20 @@
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">CSS 3</button></h3>
+                            <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                function displayString()
+                            </button></h3>
                             <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     
                                     <pre class="line-numbers">
                                         <code class="language-javascript">
-                                            //Get starting values from the DOM
-                                            //Controller function
-                                            function displayMessage(){
-                                                let msg = "";
                                             
-                                                msg = document.getElementById("message").value;
-                                            
-                                                Swal.fire(msg);
+                                            function displayString(revString){
+
+                                                let output = document.getElementById("results");
+                                                output.innerHTML = revString;
+                                                
                                             }
                                             
                                         </code>
@@ -163,9 +181,13 @@
                                 <div class="text-center">
                                     <div class="h6">Have more questions?</div>
                                     <p class="mb-4">
-                                        
+                                        Get in touch through my website!
                                     </p>
-                                    <div class="h6">Contact Me!</div>
+                                    <div class="d-flex justify-content-center">
+                                        <a type="button" href="https://helloshyann.com/#contact" target="_blank" class="btn hvr-pulse-grow btn-outline-dark">
+                                            Contact Me
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
